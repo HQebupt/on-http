@@ -15,7 +15,8 @@ RUN mkdir -p ./node_modules \
   && npm run taskdoc \
   && /RackHD/on-http/install-web-ui.sh \
   && /RackHD/on-http/install-swagger-ui.sh \
-  && npm prune --production
+  && npm prune --production \
+  && bash build_debug/build_image_info.sh
 
 EXPOSE 9080 9090
 VOLUME /RackHD/on-http/static/http/common
